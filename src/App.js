@@ -3,16 +3,17 @@
 
 import './App.css';
 // import { Movie } from './components/Movie/Movie';
-// import { Card } from './components/component';
 // import { getPopularMovies } from './api/getPopularMovies';
+// import { searchMovie } from './api/searchMovie';
+import { SearchBar } from './components/SearchBar/SearchBar';
 import { MovieList } from './components/MovieList/MovieList';
 
 function App() {
   return (
     <div className="App">
-      {/* <Card /> */}
       {/* <Movie /> */}
       <MovieList />
+      <SearchBar />
     </div>
   );
 }

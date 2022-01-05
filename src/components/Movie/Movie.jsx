@@ -1,18 +1,31 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
+// import { getMovieImage } from '../../api/getMovieImage';
 
-// type Props = {
+const imageUrl = 'https://image.tmdb.org/t/p/';
 
-// }
+export function Movie({
+  id,
+  title,
+  overview,
+  releaseDate,
+  posterPath,
+}) {
+  // const [movieId, setId] = useState(0);
 
-export function Movie({ id, name }) {
+  // useEffect(() => {
+  //   setId(id);
+  // }, []);
+
+  // {getMovieImage(id)}
+
   return (
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder" />
+          <img src={`${imageUrl}/w500/${posterPath}`} alt="Placeholder" />
         </figure>
       </div>
       <div className="card-content">
@@ -23,14 +36,14 @@ export function Movie({ id, name }) {
             </figure>
           </div>
           <div className="media-content">
-            <p className="title is-4">{name}</p>
-            <p className="subtitle is-6">{id}</p>
+            <p className="title is-5">{title}</p>
+            <p className="subtitle is-6">{releaseDate}</p>
+            <p className="subtitle is-6" hidden>{id}</p>
           </div>
         </div>
 
-        <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <div className="content" hidden>
+          {overview}
         </div>
       </div>
     </div>
@@ -38,11 +51,15 @@ export function Movie({ id, name }) {
 }
 
 Movie.propTypes = {
-  name: PropTypes.string,
+  title: PropTypes.string,
   id: PropTypes.number,
+  overview: string,
+  releaseDate: string.isRequired,
+  posterPath: string.isRequired,
 };
 
 Movie.defaultProps = {
-  name: 'some movie',
+  title: 'some movie',
   id: 0,
+  overview: 'description',
 };
