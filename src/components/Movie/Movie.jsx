@@ -25,22 +25,18 @@ export function Movie({
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src={`${imageUrl}/w500/${posterPath}`} alt="Placeholder" />
+          <img src={`${imageUrl}/w300/${posterPath}`} alt="Placeholder" />
         </figure>
       </div>
       <div className="card-content">
         <div className="media">
-          <div className="media-left">
-            <figure className="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder" />
-            </figure>
-          </div>
           <div className="media-content">
             <p className="title is-5">{title}</p>
             <p className="subtitle is-6">{releaseDate}</p>
             <p className="subtitle is-6" hidden>{id}</p>
           </div>
         </div>
+        <button type="button" className="button is-info">Add to favorites</button>
 
         <div className="content" hidden>
           {overview}
