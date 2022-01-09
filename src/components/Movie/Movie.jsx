@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
 import PropTypes, { string } from 'prop-types';
-// import { getMovieImage } from '../../api/getMovieImage';
+import { saveToFavorites } from '../Favorites/saveToFavorites';
+import { removeFromFav } from '../Favorites/removeFromFav';
 
 const imageUrl = 'https://image.tmdb.org/t/p/';
 
@@ -24,8 +26,8 @@ export function Movie({
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image is-4by3">
-          <img src={`${imageUrl}/w300/${posterPath}`} alt="Placeholder" />
+        <figure className="image is-3by4">
+          <img src={`${imageUrl}/w300/${posterPath}`} alt={title} />
         </figure>
       </div>
       <div className="card-content">
@@ -36,7 +38,26 @@ export function Movie({
             <p className="subtitle is-6" hidden>{id}</p>
           </div>
         </div>
-        <button type="button" className="button is-info">Add to favorites</button>
+        {localStorage.getItem(id) !== null ? (
+          <div className="block">
+            <span className="tag is-success">
+              In Favorites
+              <button
+                type="button"
+                className="delete is-small"
+                onClick={() => removeFromFav(id)}
+              />
+            </span>
+          </div>
+        ) : (
+          <button
+            type="button"
+            className="button is-info is-small"
+            onClick={() => saveToFavorites(id)}
+          >
+            Add to favorites
+          </button>
+        )}
 
         <div className="content" hidden>
           {overview}
