@@ -9,7 +9,7 @@ export const searchMovie = async (input) => {
   fetch(`${SearchURL}${input}${endPoint}`)
     .then((response) => response.json())
     .then((movie) => {
-      console.log(movie.results);
-      return movie.results;
+      console.log(movie);
+      return movie;
     });
 };

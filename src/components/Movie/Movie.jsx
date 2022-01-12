@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable import/prefer-default-export */
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import PropTypes, { string } from 'prop-types';
 import { saveToFavorites } from '../Favorites/saveToFavorites';
 import { removeFromFav } from '../Favorites/removeFromFav';
@@ -15,13 +15,11 @@ export function Movie({
   releaseDate,
   posterPath,
 }) {
-  // const [movieId, setId] = useState(0);
+  const [isFavorite, setFavorite] = useState(0);
 
-  // useEffect(() => {
-  //   setId(id);
-  // }, []);
-
-  // {getMovieImage(id)}
+  useEffect(() => {
+    setFavorite(localStorage.getItem(id));
+  }, []);
 
   return (
     <div className="card">
@@ -38,7 +36,7 @@ export function Movie({
             <p className="subtitle is-6" hidden>{id}</p>
           </div>
         </div>
-        {localStorage.getItem(id) !== null ? (
+        { isFavorite !== null ? (
           <div className="block">
             <span className="tag is-success">
               In Favorites

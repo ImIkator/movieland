@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable import/prefer-default-export */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -5,16 +6,14 @@ import PropTypes from 'prop-types';
 import './MovieList.css';
 import { Movie } from '../Movie/Movie';
 
-export function MovieList({ func }) {
+export function MovieList({ data }) {
   const [movies, setMovie] = useState([]);
 
   useEffect(() => {
-    func().then((moviesFromServer) => {
-      setMovie(moviesFromServer);
-    });
-  }, []);
+    setMovie(data);
+  }, [data]);
 
-  console.log(movies);
+  // console.log(movies);
   return (
     <div className="movieList">
       {movies.map((movie) => (
@@ -30,6 +29,7 @@ export function MovieList({ func }) {
     </div>
   );
 }
+
 MovieList.propTypes = {
-  func: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
 };
