@@ -13,12 +13,10 @@ export function SearchBar() {
     setSearch(e.target.value);
   };
 
-  const click = () => {
-    searchMovie(searchQuery).then((answer) => {
-      setMovies(answer);
-      console.log(searchMovie(searchQuery));
-      return answer;
-    });
+  const click = async () => {
+    const movies = await searchMovie(searchQuery);
+    console.log(movies);
+    setMovies(movies.results);
   };
 
   return (

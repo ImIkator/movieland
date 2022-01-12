@@ -13,17 +13,10 @@ export function MovieList({ data }) {
     setMovie(data);
   }, [data]);
 
-  // console.log(movies);
   return (
     <div className="movieList">
       {movies.map((movie) => (
-        <Movie
-          id={movie.id}
-          title={movie.title}
-          overview={movie.overview}
-          key={movie.id}
-          releaseDate={movie.release_date}
-          posterPath={movie.poster_path}
+        <Movie movie={movie} key={movie.id}
         />
       ))}
     </div>

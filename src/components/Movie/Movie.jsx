@@ -2,48 +2,49 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable import/prefer-default-export */
 import { React, useEffect, useState } from 'react';
-import PropTypes, { string } from 'prop-types';
+// import PropTypes, { string } from 'prop-types';
 import { saveToFavorites } from '../Favorites/saveToFavorites';
 import { removeFromFav } from '../Favorites/removeFromFav';
 
 const imageUrl = 'https://image.tmdb.org/t/p/';
 
-export function Movie({
-  id,
-  title,
-  overview,
-  releaseDate,
-  posterPath,
-}) {
-  const [isFavorite, setFavorite] = useState(0);
+export function Movie({ movie }) {
+  const [isFavorite, setFavorite] = useState(false);
 
   useEffect(() => {
-    setFavorite(localStorage.getItem(id));
+    const favourites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    setFavorite(favourites.find(favourite => favourite.id === movie.id));
   }, []);
+
+  const handleChange = (func) => {
+    func(movie);
+    setFavorite(!isFavorite);
+  };
 
   return (
     <div className="card">
       <div className="card-image">
         <figure className="image is-3by4">
-          <img src={`${imageUrl}/w300/${posterPath}`} alt={title} />
+          <img src={`${imageUrl}/w500/${movie.poster_path}`} alt={movie.title} />
         </figure>
       </div>
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <p className="title is-5">{title}</p>
-            <p className="subtitle is-6">{releaseDate}</p>
-            <p className="subtitle is-6" hidden>{id}</p>
+            <p className="title is-5">{movie.title}</p>
+            <p className="subtitle is-6">{movie.release_date}</p>
+            <p className="subtitle is-6" hidden>{movie.id}</p>
           </div>
         </div>
-        { isFavorite !== null ? (
+        { isFavorite ? (
           <div className="block">
             <span className="tag is-success">
               In Favorites
               <button
                 type="button"
                 className="delete is-small"
-                onClick={() => removeFromFav(id)}
+                onClick={() => handleChange(removeFromFav)}
               />
             </span>
           </div>
@@ -51,30 +52,30 @@ export function Movie({
           <button
             type="button"
             className="button is-info is-small"
-            onClick={() => saveToFavorites(id)}
+            onClick={() => handleChange(saveToFavorites)}
           >
             Add to favorites
           </button>
         )}
 
         <div className="content" hidden>
-          {overview}
+          {movie.overview}
         </div>
       </div>
     </div>
   );
 }
 
-Movie.propTypes = {
-  title: PropTypes.string,
-  id: PropTypes.number,
-  overview: string,
-  releaseDate: string.isRequired,
-  posterPath: string.isRequired,
-};
+// Movie.propTypes = {
+//   title: PropTypes.string,
+//   id: PropTypes.number,
+//   overview: string,
+//   releaseDate: string.isRequired,
+//   posterPath: string.isRequired,
+// };
 
-Movie.defaultProps = {
-  title: 'some movie',
-  id: 0,
-  overview: 'description',
-};
+// Movie.defaultProps = {
+//   title: 'some movie',
+//   id: 0,
+//   overview: 'description',
+// };

@@ -6,10 +6,7 @@ const SearchURL = 'https://api.themoviedb.org/3/search/movie?api_key=61be3a4c68c
 const endPoint = '&include_adult=false';
 
 export const searchMovie = async (input) => {
-  fetch(`${SearchURL}${input}${endPoint}`)
-    .then((response) => response.json())
-    .then((movie) => {
-      console.log(movie);
-      return movie;
-    });
+  const response = await fetch(`${SearchURL}${input}${endPoint}`);
+  const movie = await response.json();
+  return movie;
 };
