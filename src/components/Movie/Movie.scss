@@ -1,3 +1,30 @@
 * {
   margin: 0;
 }
+
+.card-content {
+  padding: 5px;
+}
+
+.card-image {
+  overflow: hidden;
+  // transition: all 0.15s ease-in-out;
+  transition: all 0.15s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.vote {
+  top: 8px;
+  left: -5px;
+  color: white;
+  display: inline-flex;
+  padding: 2px 8px;
+  position: absolute;
+  min-width: 30px;
+  background: #6bcc6b;
+  font-weight: bold;
+  border-radius: 2px;
+  justify-content: center;
+}

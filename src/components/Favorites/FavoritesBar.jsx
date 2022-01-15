@@ -40,7 +40,7 @@ export function FavoritesBar({ movie }) {
       ) : (
         <button
           type="button"
-          className="button is-success is-small"
+          className="button is-success is-small is-full"
           onClick={() => handleChange(saveToFavorites)}
         >
           Add to favorites

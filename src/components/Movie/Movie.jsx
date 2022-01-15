@@ -2,24 +2,24 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable import/prefer-default-export */
 
-import { FavoritesBar } from '../Favorites/FavoritesBar';
-import { Link } from 'react-router-dom';
-import { Genres } from '../Genres';
-import { getGenres } from '../../api/getGenres';
-import { useMovieGenres } from '../../hooks/useGenres';
+import { FavoritesBar } from "../Favorites/FavoritesBar";
+import { Link } from "react-router-dom";
+import { Genres } from "../Genres";
+import { useMovieGenres } from "../../hooks/useGenres";
 
-const imageUrl = 'https://image.tmdb.org/t/p/';
+import "./Movie.scss";
+
+const imageUrl = "https://image.tmdb.org/t/p/";
 
 export function Movie({ movie }) {
-
-const movieGenresMap = useMovieGenres();
+  const movieGenresMap = useMovieGenres();
 
   if (!movieGenresMap) {
     return <p>Loading...</p>;
   }
 
-  const genres = movie['genre_ids'].map(
-    (genreId) => movieGenresMap[genreId] || 'No'
+  const genres = movie["genre_ids"].map(
+    (genreId) => movieGenresMap[genreId] || "No"
   );
 
   console.log(genres);
@@ -37,20 +37,15 @@ const movieGenresMap = useMovieGenres();
         </Link>
       </div>
       <div className="card-content">
-        <div className="media">
-          <div className="media-content">
-            <p className="title is-5">{movie.title}</p>
-            {/* <Genres genresId={movie.genre_ids} /> */}
-            <p className="subtitle is-6">{movie.release_date}</p>
-            <p className="subtitle is-6" hidden>
-              {movie.id}
-            </p>
-          </div>
+        <div className="media-content is-start">
+          <p className="title is-5">{movie.title}</p>
+          <i className="subtitle is-6">
+            Release date: {movie.release_date.slice(0, 4)}
+          </i>
+          <Genres genres={genres} />
+          <p className="vote">{movie.vote_average}</p>
         </div>
         <FavoritesBar movie={movie} />
-        <div className="content" hidden>
-          {movie.overview}
-        </div>
       </div>
     </div>
   );

@@ -21,24 +21,14 @@ import { getGenre } from './api/getGenres';
 import { Route, Routes, Redirect } from 'react-router-dom';
 import { PopularPage } from './pages/PopularPage';
 import { SearchPage } from './pages/SearchPage';
-import { getFavorites } from './components/Favorites/getFavorites';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { MovieDetails } from './components/MovieDetails/MovieDetails';
-import { getMovieDetails } from './api/getMovieDetails';
 
 function App() {
-  // const [favorites, setFavorites] = useState([]);
-
-  // useEffect(() => {
-  // setFavorites(getFavorites());
-  // }, []);
-
-  // console.log(getFavorites());
   return (
-    <div className="App">
-      {/* <div className='columns is-flex-direction-columns is full-height-100vh'></div> */}
+    <div className="App is-fullheight-100vh">
       <Navbar />
-      <div className="container">
+      {/* <div className="container"> */}
         <Routes>
           <Route path='/'>
             <Route index element={<PopularPage />} />
@@ -48,20 +38,13 @@ function App() {
             <Route path="/:movieId" element={<MovieDetails />} />
           </Route>
         </Routes>
-        {/* <MovieDetails /> */}
-      </div>
-      <footer class="footer">
+      {/* </div> */}
+      <footer class="footer is-dark">
         <div class="content has-text-centered">
           <p>
-            <strong>Bulma</strong> by{" "}
-            <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-            licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-            The website content is licensed{" "}
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-              CC BY NC SA 4.0
-            </a>
-            .
+            <strong>Movieland</strong> by{" "}
+            Ivan Meleganych
+            <p>App allows you to check the most popular movies on time - using <strong>TMBD</strong> API</p>
           </p>
         </div>
       </footer>

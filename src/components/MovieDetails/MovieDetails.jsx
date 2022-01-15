@@ -5,8 +5,9 @@ import { FavoritesBar } from "../Favorites/FavoritesBar";
 import { getRecommendation } from "../../api/getRecommendations";
 import { MovieList } from "../MovieList/MovieList";
 import { getMovieInfo } from "../../api/getMovieInfo";
+import "./MovieDetails.scss";
 
-const imageUrl = 'https://image.tmdb.org/t/p/';
+const imageUrl = "https://image.tmdb.org/t/p/";
 
 export function MovieDetails() {
   const { movieId } = useParams();
@@ -33,22 +34,35 @@ export function MovieDetails() {
 
   return (
     <>
-      <figure className="image is-3by4">
-        <img src={`${imageUrl}/w500/${movie.poster_path}`} alt={movie.title} />
-      </figure>
-      <FavoritesBar movie={movie} />
-      <div className="container">
-        <article class="message">
-          <div class="message-header">
-            <p>{movie.title}</p>
-            <button class="delete" aria-label="delete"></button>
-          </div>
-          <div class="message-body">{movie.overview}</div>
-        </article>
-
-        <div className="container">
-          <MovieList data={recommendations.results} />
+      <main>
+        <div className="back-image">
+          <img
+            className="img"
+            src={`${imageUrl}/500/${movie.backdrop_path}`}
+            alt={movie.title}
+          />
         </div>
+        {/* <figure className="image is-3by4">
+          <img src={`${imageUrl}/w500/${movie.poster_path}`} alt={movie.title} />
+        </figure> */}
+        <FavoritesBar movie={movie} />
+        <div className="container">
+          <article class="message">
+            <div class="message-header">
+              <p>{movie.title}</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">{movie.overview}</div>
+          </article>
+        </div>
+      </main>
+      <section class="hero is-small is-success">
+        <div class="hero-body">
+          <p class="title">Recommendation list</p>
+        </div>
+      </section>
+      <div className="container">
+        <MovieList data={recommendations.results} />
       </div>
     </>
   );
