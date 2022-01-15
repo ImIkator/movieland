@@ -1,12 +1,12 @@
 /* eslint-disable import/prefer-default-export */
-import React, { useState } from 'react';
-import { searchMovie } from '../../api/searchMovie';
-import { MovieList } from '../MovieList/MovieList';
+import React, { useState } from "react";
+import { searchMovie } from "../../api/searchMovie";
+import { MovieList } from "../MovieList/MovieList";
 
-import './SearchBar.css';
+import "./SearchBar.css";
 
 export function SearchBar() {
-  const [searchQuery, setSearch] = useState('');
+  const [searchQuery, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
 
   const handleChange = (e) => {
@@ -20,18 +20,20 @@ export function SearchBar() {
   };
 
   return (
-    <div className="searchBar">
-      <div className="control">
-        <input
-          className="input"
-          type="text"
-          placeholder="Search movie"
-          onChange={handleChange}
-        />
+    <div className="container">
+      <div className="container">
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="Search movie"
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" className="button is-dark" onClick={click}>
+          Search
+        </button>
       </div>
-      <button type="submit" className="button is-dark" onClick={click}>
-        Search
-      </button>
       {movies && <MovieList data={movies} />}
     </div>
   );

@@ -8,9 +8,6 @@ export function FavoritesPage() {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    // getFavorites().then((moviesFromServer) => {
-    //   setMovies(moviesFromServer);
-    // });
     setMovies(getFavorites());
   }, []);
 
@@ -20,7 +17,9 @@ export function FavoritesPage() {
     )
   }
 
-  console.log(movies)
+  console.log(movies);
+  console.log(getFavorites());
+
   return (
     <div>
       <MovieList data={movies} />

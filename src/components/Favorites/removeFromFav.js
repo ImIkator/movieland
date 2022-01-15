@@ -1,11 +1,26 @@
 /* eslint-disable import/prefer-default-export */
 
 export async function removeFromFav(favorite) {
-  const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  const newFavorites = savedFavorites.filter(
-    savedFavorite => savedFavorite.id !== favorite.id
-  );
+  try {
 
-  localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+    const newFavorites = savedFavorites.filter(
+      savedFavorite => savedFavorite.id !== favorite.id
+    );
+    
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
+  
+    console.log('removed'); 
+    console.log(savedFavorites);
+    console.log(newFavorites);
+    console.log(favorite);
+
+  } catch (error) {
+    
+    return;
+  }
+
 }

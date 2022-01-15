@@ -13,12 +13,17 @@ export function MovieList({ data }) {
     setMovie(data);
   }, [data]);
 
+  console.log(movies);
+
   return (
     <div className="movieList">
       {movies.map((movie) => (
-        <Movie movie={movie} key={movie.id}
+        <Movie
+          movie={movie}
+          key={movie.id}
         />
       ))}
+      <button class="button is-medium is-success is-light">Load more</button>
     </div>
   );
 }
