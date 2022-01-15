@@ -1,10 +1,10 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable import/prefer-default-export */
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+// import PropTypes from "prop-types";
 
-import './MovieList.css';
-import { Movie } from '../Movie/Movie';
+import "./MovieList.css";
+import { Movie } from "../Movie/Movie";
 
 export function MovieList({ data }) {
   const [movies, setMovie] = useState([]);
@@ -15,19 +15,21 @@ export function MovieList({ data }) {
 
   console.log(movies);
 
+  if (!movies.length) {
+    return null;
+  }
+
   return (
-    <div className="movieList">
-      {movies.map((movie) => (
-        <Movie
-          movie={movie}
-          key={movie.id}
-        />
-      ))}
-      <button class="button is-medium is-success is-light">Load more</button>
+    <div className="movieList-cintainer">
+      <div className="movieList">
+        {movies.map((movie) => (
+          <Movie movie={movie} key={movie.id} />
+        ))}
+      </div>
     </div>
   );
 }
 
-MovieList.propTypes = {
-  data: PropTypes.array.isRequired,
-};
+// MovieList.propTypes = {
+//   data: PropTypes.array.isRequired,
+// };

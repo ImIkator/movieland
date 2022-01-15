@@ -3,12 +3,19 @@ import { getFavorites } from './getFavorites';
 import { removeFromFav } from './removeFromFav';
 import { saveToFavorites } from './saveToFavorites';
 
-export function FavoritesBar(movie) {
+export function FavoritesBar({ movie }) {
   const [isFavorite, setFavorite] = useState(false);
 
   useEffect(() => {
-    const favourites = getFavorites();
-    setFavorite(!favourites.find((favourite) => favourite.id === movie.id));
+    const addedToFavorites = getFavorites();
+
+    const target = addedToFavorites.find(
+      (favorite) => favorite.id === movie.id
+    );
+
+    if (target) {
+      setFavorite(true);
+    }
   }, [movie.id]);
 
   const handleChange = (func) => {

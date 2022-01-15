@@ -16,7 +16,7 @@ import { MovieList } from './components/MovieList/MovieList';
 import { Pagination } from './components/Pagination/Pagination';
 import { Navbar } from './components/Navbar/Navbar';
 import { getRecommendation } from './api/getRecommendations';
-import { getMovieInfo } from './api/getMovieInfo';
+// import { getMovieInfo } from './api/getMovieInfo';
 import { getGenre } from './api/getGenres';
 import { Route, Routes, Redirect } from 'react-router-dom';
 import { PopularPage } from './pages/PopularPage';
@@ -24,6 +24,7 @@ import { SearchPage } from './pages/SearchPage';
 import { getFavorites } from './components/Favorites/getFavorites';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { MovieDetails } from './components/MovieDetails/MovieDetails';
+import { getMovieDetails } from './api/getMovieDetails';
 
 function App() {
   // const [favorites, setFavorites] = useState([]);
@@ -35,6 +36,7 @@ function App() {
   // console.log(getFavorites());
   return (
     <div className="App">
+      {/* <div className='columns is-flex-direction-columns is full-height-100vh'></div> */}
       <Navbar />
       <div className="container">
         <Routes>
@@ -43,10 +45,26 @@ function App() {
             <Route path='/popular' element={<PopularPage />} />
             <Route path='/search' element={<SearchPage />} />
             <Route path='/favorites' element={<FavoritesPage />} />
+            <Route path="/:movieId" element={<MovieDetails />} />
           </Route>
         </Routes>
         {/* <MovieDetails /> */}
       </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Bulma</strong> by{" "}
+            <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+            licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            The website content is licensed{" "}
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+              CC BY NC SA 4.0
+            </a>
+            .
+          </p>
+        </div>
+      </footer>
     </div>
   );
 
