@@ -1,7 +1,7 @@
 .back-image {
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  height: 90%;
+  z-index: 0;
   position: absolute;
 
   &:after {
@@ -22,4 +22,19 @@
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.tile-container {
+  height: 90vh;
+  padding-top: 20px;
+}
+
+.is-child {
+  background-color: antiquewhite;
+  // background: transparent 50%;
+}
+
+.is-parent {
+  display: flex;
+  text-align: start;
 }

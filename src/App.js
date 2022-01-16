@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container">
+      {/* <div className="container"> */}
         <Routes>
           <Route path='/'>
             <Route index element={<PopularPage />} />
@@ -31,7 +31,7 @@ function App() {
             <Route path="/:movieId" element={<MovieDetails />} />
           </Route>
         </Routes>
-      </div>
+      {/* </div> */}
       <Footer />
     </div>
   );

@@ -31,14 +31,40 @@ export function MovieDetails() {
   }
 
   return (
-    <>
-      <main>
-        <div className="tile is-ancestor">
-          <div className="tile is-4">!-- 1/3 --</div>
-          <div className="tile">!-- This tile will take the rest: 2/3 --</div>
+    <div className="movie-details">
+      <div className="back-image">
+        <img
+          className="img"
+          src={`${imageUrl}/w500/${movie.backdrop_path}`}
+          alt={movie.title}
+        />
+      </div>
+      <div className="container tile-container">
+        <div class="tile is-ancestor">
+          <div class="tile is-4 is-vertical">
+            <div class="tile is-child box">
+              <figure class="image is-3by3">
+                <img
+                  src={`${imageUrl}w500${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </figure>
+              <p className="subtitle is 6">{movie.tagline}</p>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <p class="title">{movie.title}</p>
+              <p className="subtitle is-5">{movie.production_countries.map((country) => <i>{country.name} </i>)}</p>
+              <p>{' '}</p>
+              <p>{' '}</p>
+              <p className="subtitle is-4">Description</p>
+
+              {movie.overview}
+            </div>
+          </div>
         </div>
-        <FavoritesBar movie={movie} />
-      </main>
+      </div>
       <section className="hero is-small is-dark">
         <div className="hero-body">
           <p className="title">Recommendations</p>
@@ -47,14 +73,6 @@ export function MovieDetails() {
       <div className="container">
         <MovieList data={recommendations.results} />
       </div>
-    </>
+    </div>
   );
 }
-
-{/* <div className="back-image">
-  <img
-    className="img"
-    src={`${imageUrl}/500/${movie.backdrop_path}`}
-    alt={movie.title}
-  />
-</div>; */}

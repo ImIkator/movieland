@@ -9,10 +9,11 @@
 [Movieland](https://imikator.github.io/movieland/)
 
 ## Technology features
-- React component structure
+- React functional component structure
 - React Routing implemented
 - Fething data from TMDB API
 - Saving/removing data on Local Storage
+- Responsive layout
 
  ## Instructions
  - clone repository to Your device

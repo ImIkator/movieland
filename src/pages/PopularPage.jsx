@@ -28,7 +28,7 @@ export function PopularPage() {
   }
 
   return (
-    <div>
+    <div className="container">
       <MovieList data={movies} />
       <button
         class="button is-medium is-dark"
