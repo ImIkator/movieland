@@ -31,7 +31,7 @@ export function PopularPage() {
     <div>
       <MovieList data={movies} />
       <button
-        class="button is-medium is-success is-light"
+        class="button is-medium is-dark"
         onClick={handleLoadNext}
       >
         Load Next

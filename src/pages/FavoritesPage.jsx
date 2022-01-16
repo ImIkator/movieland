@@ -18,7 +18,6 @@ export function FavoritesPage() {
   }
 
   console.log(movies);
-  console.log(getFavorites());
 
   return (
     <div>

@@ -7,18 +7,16 @@
   background-color: darkslategrey;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-
-  border-bottom:burlywood 5px;
-  border: burlywood 2px;
-}
-
 .card {
   min-width: 200px;
   margin: 3px;
+}
+
+.footer {
+  background-color: #363636;
+  color: antiquewhite;
+}
+
+.input {
+  margin-bottom: 5px;
 }

@@ -1,8 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable import/prefer-default-export */
 import React, { useEffect, useState } from "react";
-// import PropTypes from "prop-types";
-
 import "./MovieList.css";
 import { Movie } from "../Movie/Movie";
 
@@ -18,7 +16,7 @@ export function MovieList({ data }) {
   if (!movies.length) {
     return null;
   }
-
+  // localStorage.clear();
   return (
     <div className="movieList-cintainer">
       <div className="movieList">
@@ -29,7 +27,3 @@ export function MovieList({ data }) {
     </div>
   );
 }
-
-// MovieList.propTypes = {
-//   data: PropTypes.array.isRequired,
-// };

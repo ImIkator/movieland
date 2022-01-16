@@ -35,18 +35,34 @@ export function MovieDetails() {
   return (
     <>
       <main>
-        <div className="back-image">
-          <img
-            className="img"
-            src={`${imageUrl}/500/${movie.backdrop_path}`}
-            alt={movie.title}
-          />
+        <div class="tile is-ancestor">
+          <div class="tile is-4">!-- 1/3 --</div>
+          <div class="tile">!-- This tile will take the rest: 2/3 --</div>
         </div>
-        {/* <figure className="image is-3by4">
-          <img src={`${imageUrl}/w500/${movie.poster_path}`} alt={movie.title} />
-        </figure> */}
+        {/* 
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title">Middle tile</p>
+            <p class="subtitle">With an image</p>
+            <figure className="image is-3by4">
+              <img
+                src={`${imageUrl}/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </figure>
+          </article>
+        </div> */}
+        {/* <div className="card-image">
+          <figure className="image is-3by4">
+            <img
+              src={`${imageUrl}/w500/${movie.poster_path}`}
+              alt={movie.title}
+            />
+          </figure>
+        </div> */}
+
         <FavoritesBar movie={movie} />
-        <div className="container">
+        {/* <div className="container">
           <article class="message">
             <div class="message-header">
               <p>{movie.title}</p>
@@ -54,11 +70,11 @@ export function MovieDetails() {
             </div>
             <div class="message-body">{movie.overview}</div>
           </article>
-        </div>
+        </div> */}
       </main>
-      <section class="hero is-small is-success">
+      <section class="hero is-small is-dark">
         <div class="hero-body">
-          <p class="title">Recommendation list</p>
+          <p class="title">Recommendations</p>
         </div>
       </section>
       <div className="container">
@@ -67,3 +83,11 @@ export function MovieDetails() {
     </>
   );
 }
+
+{/* <div className="back-image">
+  <img
+    className="img"
+    src={`${imageUrl}/500/${movie.backdrop_path}`}
+    alt={movie.title}
+  />
+</div>; */}

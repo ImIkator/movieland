@@ -15,19 +15,19 @@ export function SearchBar() {
 
   const click = async () => {
     const movies = await searchMovie(searchQuery);
-    console.log(movies);
     setMovies(movies.results);
   };
 
   return (
-    <div className="container">
+    <div className="container searchbar-container">
       <div className="container">
         <div className="control">
           <input
             className="input"
-            type="text"
+            type="input"
             placeholder="Search movie"
             onChange={handleChange}
+            onSubmit={click}
           />
         </div>
         <button type="submit" className="button is-dark" onClick={click}>
