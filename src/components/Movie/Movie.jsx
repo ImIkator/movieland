@@ -17,13 +17,10 @@ export function Movie({ movie }) {
   if (!movieGenresMap) {
     return <p>Loading...</p>;
   }
-  console.log(movie);
 
   const genres = movie["genre_ids"].map(
     (genreId) => movieGenresMap[genreId] || "No"
   );
-
-  console.log(genres);
 
   return (
     <div className="card">

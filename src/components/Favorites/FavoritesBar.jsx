@@ -22,8 +22,7 @@ export function FavoritesBar({ movie }) {
     func(movie);
     setFavorite(!isFavorite);
   };
-  console.log(isFavorite);
-  console.log('favorites');  
+
   return (
     <>
       {isFavorite ? (

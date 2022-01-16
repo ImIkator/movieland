@@ -16,7 +16,7 @@ export function MovieList({ data }) {
   if (!movies.length) {
     return null;
   }
-  // localStorage.clear();
+
   return (
     <div className="movieList-cintainer">
       <div className="movieList">

@@ -17,8 +17,6 @@ export function FavoritesPage() {
     )
   }
 
-  console.log(movies);
-
   return (
     <div>
       <MovieList data={movies} />

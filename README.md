@@ -1,12 +1,21 @@
-# Summary
-The app Movieland, should show a list of popular movies with search bar.
-It should provide the ability to choose a movie, it see all details about it.
-Also there presents Favorites list with all functionality inside app, like :
--adding/removing button to Favorites list;
--movies will be marked if added to Favorites;
+# Movieland App
+
+## Description
+- The app Movieland, show You a list of popular movies on time, using TMBD (The Movie Data Base) API
+- It provides the ability to choose a movie and see all details about it - by pressing movie image on a list.
+- Also there presents Favourites list page which saves your favourites and give You an option to remove them at any time.
+
+### Technology features
+- React component structure
+- React Routing implemented
+- Fething data from TMDB API
+- Saving/removing data on Local Storage
 
 ## Demo link
 [Movieland](https://imikator.github.io/movieland/)
 
- ## API Key
- 61be3a4c68c246ddbff6a44b2d0469f8
+ ## Instructions
+ - clone repository to Your device
+ - npm start
+ - run the application
+

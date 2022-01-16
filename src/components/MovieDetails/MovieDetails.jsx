@@ -26,8 +26,6 @@ export function MovieDetails() {
     fetchMovie();
   }, [movieId]);
 
-  console.log(recommendations);
-
   if (!movie || !recommendations) {
     return <p>Loading...</p>;
   }
@@ -35,46 +33,15 @@ export function MovieDetails() {
   return (
     <>
       <main>
-        <div class="tile is-ancestor">
-          <div class="tile is-4">!-- 1/3 --</div>
-          <div class="tile">!-- This tile will take the rest: 2/3 --</div>
+        <div className="tile is-ancestor">
+          <div className="tile is-4">!-- 1/3 --</div>
+          <div className="tile">!-- This tile will take the rest: 2/3 --</div>
         </div>
-        {/* 
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title">Middle tile</p>
-            <p class="subtitle">With an image</p>
-            <figure className="image is-3by4">
-              <img
-                src={`${imageUrl}/w500/${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </figure>
-          </article>
-        </div> */}
-        {/* <div className="card-image">
-          <figure className="image is-3by4">
-            <img
-              src={`${imageUrl}/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
-          </figure>
-        </div> */}
-
         <FavoritesBar movie={movie} />
-        {/* <div className="container">
-          <article class="message">
-            <div class="message-header">
-              <p>{movie.title}</p>
-              <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">{movie.overview}</div>
-          </article>
-        </div> */}
       </main>
-      <section class="hero is-small is-dark">
-        <div class="hero-body">
-          <p class="title">Recommendations</p>
+      <section className="hero is-small is-dark">
+        <div className="hero-body">
+          <p className="title">Recommendations</p>
         </div>
       </section>
       <div className="container">
