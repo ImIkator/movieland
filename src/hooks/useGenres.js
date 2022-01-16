@@ -23,4 +23,4 @@ export function useMovieGenres(movie) {
   }, []);
 
   return genres;
-}
+};

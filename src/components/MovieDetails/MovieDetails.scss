@@ -31,10 +31,13 @@
 
 .is-child {
   background-color: antiquewhite;
-  // background: transparent 50%;
 }
 
 .is-parent {
   display: flex;
   text-align: start;
+}
+
+.hero.is-dark .title {
+  color: antiquewhite;
 }

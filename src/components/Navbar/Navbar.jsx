@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.scss';
@@ -22,4 +21,4 @@ export function Navbar() {
       </div>
     </nav>
   );
-}
+};

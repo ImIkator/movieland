@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable import/prefer-default-export */
 import React, { useEffect, useState } from "react";
 import "./MovieList.css";
 import { Movie } from "../Movie/Movie";
@@ -10,8 +8,6 @@ export function MovieList({ data }) {
   useEffect(() => {
     setMovie(data);
   }, [data]);
-
-  console.log(movies);
 
   if (!movies.length) {
     return null;
@@ -26,4 +22,4 @@ export function MovieList({ data }) {
       </div>
     </div>
   );
-}
+};

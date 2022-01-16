@@ -4,4 +4,4 @@ export function SearchPage() {
   return (
     <SearchBar />
   );
-}
+};

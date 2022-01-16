@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import React, { useState } from "react";
 import { searchMovie } from "../../api/searchMovie";
 import { MovieList } from "../MovieList/MovieList";
@@ -37,4 +36,4 @@ export function SearchBar() {
       {movies && <MovieList data={movies} />}
     </div>
   );
-}
+};

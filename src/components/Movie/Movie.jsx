@@ -1,10 +1,6 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/function-component-definition */
-/* eslint-disable import/prefer-default-export */
-
 import { FavoritesBar } from "../Favorites/FavoritesBar";
 import { Link } from "react-router-dom";
-import { Genres } from "../Genres";
+import { Genres } from "./Genres";
 import { useMovieGenres } from "../../hooks/useGenres";
 
 import "./Movie.scss";
@@ -47,4 +43,4 @@ export function Movie({ movie }) {
       </div>
     </div>
   );
-}
+};

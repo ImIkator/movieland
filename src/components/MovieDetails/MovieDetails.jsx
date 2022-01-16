@@ -49,25 +49,29 @@ export function MovieDetails() {
                   alt={movie.title}
                 />
               </figure>
-              <p className="subtitle is 6">{movie.tagline}</p>
             </div>
           </div>
           <div class="tile is-parent">
             <div class="tile is-child box">
               <p class="title">{movie.title}</p>
-              <p className="subtitle is-5">{movie.production_countries.map((country) => <i>{country.name} </i>)}</p>
-              <p>{' '}</p>
-              <p>{' '}</p>
-              <p className="subtitle is-4">Description</p>
-
-              {movie.overview}
+              <p className="title is-6">{movie.production_countries.map((country) => <i>{country.name} </i>)}</p>
+              <i className="title is-5">{movie.tagline}</i>
+              <p className="title is-5">Description</p>
+              <p>{movie.overview}</p>
+              <p className="subtitle is-5">Original title: "{movie.original_title}"</p>
+              <p><b>Release date:</b> {movie.release_date}</p>
+              <p><b>Genres:</b> {movie.genres.map((genre) => <em>{genre.name} </em>)}</p>
+              <p><b>Budget:</b> {movie.budget} $</p>
+              <p><b>Duration:</b> {movie.runtime} min</p>
+              <p><b>Votes:</b> <em>{movie.vote_average}/10</em></p>
+              <FavoritesBar movie={movie} />
             </div>
           </div>
         </div>
       </div>
       <section className="hero is-small is-dark">
         <div className="hero-body">
-          <p className="title">Recommendations</p>
+          <p className="title reccomend">Recommendations</p>
         </div>
       </section>
       <div className="container">
@@ -75,4 +79,4 @@ export function MovieDetails() {
       </div>
     </div>
   );
-}
+};

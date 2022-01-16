@@ -1,13 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/state-in-constructor */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-filename-extension */
-
 import './App.scss';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
@@ -21,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <div className="container"> */}
         <Routes>
           <Route path='/'>
             <Route index element={<PopularPage />} />
@@ -31,7 +20,6 @@ function App() {
             <Route path="/:movieId" element={<MovieDetails />} />
           </Route>
         </Routes>
-      {/* </div> */}
       <Footer />
     </div>
   );

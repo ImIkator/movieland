@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 export function saveToFavorites(favorites) {
   try {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -14,4 +12,4 @@ export function saveToFavorites(favorites) {
   } catch {
     return;
   }
-}
+};

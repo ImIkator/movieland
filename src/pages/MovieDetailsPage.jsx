@@ -5,4 +5,4 @@ export function MovieDetailsPage() {
   return (
     <MovieDetails />
   )
-}
+};

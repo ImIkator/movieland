@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 export async function removeFromFav(favorite) {
 
   try {
@@ -23,4 +21,4 @@ export async function removeFromFav(favorite) {
     return;
   }
 
-}
+};

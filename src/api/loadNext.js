@@ -6,4 +6,4 @@ export async function loadNext(page) {
   const data = await response.json();
 
   return data;
-}
+};
