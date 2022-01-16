@@ -28,7 +28,7 @@ export function FavoritesBar({ movie }) {
       {isFavorite ? (
         <div className="block">
           <span className="tag is-danger">
-            Remove from Favorites
+            In favourites
             <button
               type="button"
               className="delete is-small"
@@ -42,7 +42,7 @@ export function FavoritesBar({ movie }) {
           className="button is-success is-small is-full"
           onClick={() => handleChange(saveToFavorites)}
         >
-          Add to favorites
+          Add to favourites
         </button>
       )}
     </>

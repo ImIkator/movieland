@@ -17,7 +17,7 @@ export function Navbar() {
           Popular
         </NavLink>
         <NavLink className="navbar-item subtitle is-4" to="/favorites">
-          Favorites
+          Favourites
         </NavLink>
       </div>
     </nav>
