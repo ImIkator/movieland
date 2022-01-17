@@ -24,6 +24,8 @@ export function Movie({ movie }) {
     );
   }
 
+  const releaseDate = movie.release_date ? movie.release_date.slice(0, 4) : '-';
+
   return (
     <div className="card">
       <div className="card-image">
@@ -40,7 +42,7 @@ export function Movie({ movie }) {
         <div className="media-content is-start">
           <p className="title is-5">{movie.title}</p>
           <i className="subtitle is-6">
-            Release date: {movie.release_date.slice(0, 4)}
+            Release date: {releaseDate}
           </i>
           <Genres genres={genres} />
           <p className="vote">{movie.vote_average}</p>
