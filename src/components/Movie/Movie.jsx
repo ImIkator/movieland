@@ -14,9 +14,15 @@ export function Movie({ movie }) {
     return <p>Loading...</p>;
   }
 
-  const genres = movie["genre_ids"].map(
-    (genreId) => movieGenresMap[genreId] || "No"
-  );
+  let genres;
+
+  if (movie.hasOwnProperty('genres')) {
+    genres = movie.genres.map((genre) => genre.name)
+  } else {
+    genres = movie.genre_ids.map(
+      (genreId) => movieGenresMap[genreId] || "No"
+    );
+  }
 
   return (
     <div className="card">
