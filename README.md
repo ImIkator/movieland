@@ -11,7 +11,7 @@
 ## Technology features
 - React functional component structure
 - React Routing implemented
-- Fething data from TMDB API
+- Fetching data from TMDB API
 - Saving/removing data on Local Storage
 - Responsive layout
 
